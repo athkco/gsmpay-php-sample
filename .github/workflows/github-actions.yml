@@ -1,16 +1,18 @@
-name: Actions Runner Controller Demo
+name: Actions Runner Controller - Test ARC
 
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 
 
 on:
   workflow_dispatch:
-
+  push:
+    branches:
+      - main
 
 jobs:
   Explore-GitHub-Actions:
     #    runs-on: arc-runner-set
-    runs-on: arc
+    runs-on: gsmpay-runner-dev-1
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
@@ -23,4 +25,3 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-
